@@ -4,10 +4,10 @@
 
 Add these two in your html file.
 
-´´´ html
+``` html
 <link href="pagination.css" rel="stylesheet" type="text/css"/>
 <script src="paginate.js"></script>
-´´´
+```
 
 --------------------------------
 
@@ -29,3 +29,7 @@ $("#pages").paginate({
   }
 });
 ```
+
+### Licence
+
+MIT
