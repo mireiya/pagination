@@ -14,5 +14,3 @@ $("#pages").paginate({
     //do something with page
   }
 });
-´´´
-
