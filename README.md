@@ -4,8 +4,11 @@
 
 ``` html
 <div id="pages"></div>
+```
 
-```jquery
+--------------------------------
+
+``` javascript
 $("#pages").paginate({
   currentPage: 1,
   visiblePage: 5,
@@ -14,3 +17,4 @@ $("#pages").paginate({
     //do something with page
   }
 });
+```
