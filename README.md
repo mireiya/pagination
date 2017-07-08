@@ -1,4 +1,4 @@
-# pagination
+# Pagination
 
 ## Usage
 
@@ -8,6 +8,8 @@ Add these two in your html file.
 <link href="pagination.css" rel="stylesheet" type="text/css"/>
 <script src="paginate.js"></script>
 ´´´
+
+--------------------------------
 
 ### HTML Code
 ``` html
