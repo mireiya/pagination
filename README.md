@@ -5,7 +5,7 @@
 ``` html
 <div id="pages"></div>
 
-```
+```jquery
 $("#pages").paginate({
   currentPage: 1,
   visiblePage: 5,
