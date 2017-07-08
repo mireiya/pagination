@@ -2,12 +2,21 @@
 
 ## Usage
 
+Add these two in your html file.
+
+´´´ html
+<link href="pagination.css" rel="stylesheet" type="text/css"/>
+<script src="paginate.js"></script>
+´´´
+
+### HTML Code
 ``` html
 <div id="pages"></div>
 ```
 
 --------------------------------
 
+### Javascript Code
 ``` javascript
 $("#pages").paginate({
   currentPage: 1,
