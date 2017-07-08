@@ -1,0 +1,75 @@
+.paging-wrapper .noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -user-select: none;
+}
+
+.paging {
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.paging ul {
+    cursor: pointer;
+}
+
+.paging li {
+    display: inline-block;
+    cursor: pointer;
+    color: #00a9ff;
+    padding: 5px 10px;
+    margin: 0 2px;
+    background-color: #fafafa;
+    -webkit-box-shadow: 0px 0px 32px 1px rgba(0,0,0,0.1);
+    -moz-box-shadow: 0px 0px 32px 1px rgba(0,0,0,0.1);
+    box-shadow: 0px 0px 32px 1px rgba(0,0,0,0.1);
+    font-family: 'Garamond';
+    font-weight: bold;
+}
+
+.paging li.active {
+    background-color: rgba(0, 168, 107, 1);
+    font-weight: bold;
+    color: white;
+}
+
+.paging li:hover {
+    color: white;
+    font-weight: bold;
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+    background-color: #00a9ff;
+}
+
+#goto-page {
+    outline: none;
+    border: none;
+    width: 30px;
+    padding: 3px;
+    margin: 0 2px;
+    text-align: center;
+    -webkit-transition: all 0.20s ease-in-out;
+    -moz-transition: all 0.20s ease-in-out;
+    -ms-transition: all 0.20s ease-in-out;
+    -o-transition: all 0.20s ease-in-out;
+    outline: none;
+    padding: 3px 0px 3px 3px;
+    margin: 5px 1px 3px 0px;
+    height: 20px;
+    box-shadow: 0 0 1px rgba(81, 203, 238, 1);
+}
+
+#goto-page:focus {
+    box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+}
+
+.goto-text {
+    font-weight: bold;
+    color: #00a9ff;
+    margin-left: 50px;
+}
