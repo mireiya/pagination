@@ -1,23 +1,25 @@
 $(document).ready(function () {
     $("#pages").paginate({
-        currentPage: 1,
-        visiblePage: 5,
-        maxPage: 100,
+        visiblePage: 10,
+        maxPage: 954,
         onPageChange: function (page) {
             $("#content").html(page);
+            console.log(page);
         }
     });
 });
 
 
 $.fn.paginateCore = function (paginationData) {
-    currentPage = parseInt(paginationData.currentPage);
-    visiblePage = parseInt(paginationData.visiblePage);
-    maxPage = parseInt(paginationData.maxPage);
+    var currentPage = parseInt(paginationData.currentPage);
+    var visiblePage = parseInt(paginationData.visiblePage);
+    var maxPage = parseInt(paginationData.maxPage);
+
+    var vhalf = visiblePage / 2;
 
     var first = 1;
     var index = 0;
-    var pagingdiv = '<div class="paging-wrapper"><ul class="paging noselect" data-p="' + paginationData.currentPage + '">';
+    var pagingdiv = '<div class="paging-wrapper"><ul class="paging noselect" data-p="' + currentPage + '">';
     pagingdiv += '<li id="page-back" data-p="prev-page">&lt </li>';
     if (maxPage < 10) {
         for (index = 1; index <= maxPage; ++index) {
@@ -31,7 +33,7 @@ $.fn.paginateCore = function (paginationData) {
         pagingdiv += '<li class="paging" style="margin-left: 25px;" id="page-' + maxPage + '" data-p="' + maxPage + '">' + maxPage + '</li>';
     } else if (currentPage >= visiblePage && currentPage <= maxPage - visiblePage) {
         pagingdiv += '<li id="page-' + first + '" data-p="' + first + '" style="margin-right: 25px;">' + first + ' </li>';
-        for (index = currentPage - 2; index < currentPage + visiblePage - 2; ++index) {
+        for (index = currentPage - vhalf; index < currentPage + visiblePage - vhalf; ++index) {
             pagingdiv += '<li id="page-' + index + '" data-p="' + index + '">' + index + ' </li>';
         }
         pagingdiv += '<li id="page-' + maxPage + '" data-p="' + maxPage + '" style="margin-left: 25px;">' + maxPage + '</li>';
@@ -55,6 +57,11 @@ $.fn.paginateCore = function (paginationData) {
 $.fn.paginate = function (pdata) {
     var p;
     var main = $(this);
+
+    if(pdata.currentPage === undefined) pdata.currentPage = 1;
+    if(pdata.visiblePage === undefined) pdata.visiblePage = 5;
+    if(pdata.maxPage === undefined) throw new Error("maxPage is undefined!");
+
     $(this).paginateCore(pdata);
     $("#page-" + pdata.currentPage).addClass('active');
     $("ul.paging li").click(function () {
@@ -69,10 +76,10 @@ $.fn.paginate = function (pdata) {
             $("ul.paging li").removeClass('active');
             p = pdata.currentPage >= pdata.maxPage ? pdata.maxPage : pdata.currentPage + 1;
         } else if (data === "go-page") {
-            $("ul.paging li").removeClass('active');
             p = $("#goto-page").val();
             p = parseInt(p);
-            if (!p || p < 1 || p > pdata.maxPage || p === pdata.currentPage) return;
+            if (!p || p === pdata.currentPage) return;
+            $("ul.paging li").removeClass('active');
             p = p <= 1 ? 1 : (p >= pdata.maxPage ? pdata.maxPage : p);
         } else {
             p = parseInt(data);
