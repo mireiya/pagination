@@ -2,7 +2,7 @@
 
 ## Usage
 
-Add these two in your html file.
+Add these two lines in your html file.
 
 ``` html
 <link href="pagination.css" rel="stylesheet" type="text/css"/>
