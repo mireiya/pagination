@@ -18,6 +18,7 @@
 
 .paging li {
     display: inline-block;
+    text-align: center;
     cursor: pointer;
     color: #00a9ff;
     padding: 5px 10px;
@@ -29,6 +30,7 @@
     font-family: 'Tahoma';
     font-weight: normal;
     font-size: 14px;
+    border-radius: 5px;
 }
 
 .paging li.active {
@@ -51,8 +53,6 @@
     outline: none;
     border: none;
     width: 30px;
-    padding: 3px;
-    margin: 0 2px;
     text-align: center;
     -webkit-transition: all 0.20s ease-in-out;
     -moz-transition: all 0.20s ease-in-out;
@@ -64,7 +64,7 @@
     height: 23px;
     color: #00a86b;
     font-weight: bold;
-    box-shadow: 0 0 1px rgba(81, 203, 238, 1);
+    box-shadow: 0 0 5px rgba(81, 203, 238, 0.7);
 }
 
 #goto-page:focus {
