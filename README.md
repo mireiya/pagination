@@ -22,7 +22,7 @@ Add these two lines in your html file.
 ``` javascript
 $("#pages").paginate({
   currentPage: 1, //if not provided, default is 1
-  visiblePage: 5, //if not provided, default is 5
+  visiblePage: 5, //if not provided, default is 5 (prefer odd numbers)
   maxPage: 100,   //must be provided by user, otherwise it will throw an error
   onPageChange: function (page) {
     //do something with page
