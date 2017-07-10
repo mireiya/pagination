@@ -1,16 +1,4 @@
-$(document).ready(function () {
-    $("#pages").paginate({
-        visiblePage: 10,
-        maxPage: 954,
-        onPageChange: function (page) {
-            $("#content").html(page);
-            console.log(page);
-        }
-    });
-});
-
-
-$.fn.paginateCore = function (paginationData) {
+$.fn.paginateCore = function(paginationData) {
     var currentPage = parseInt(paginationData.currentPage);
     var visiblePage = parseInt(paginationData.visiblePage);
     var maxPage = parseInt(paginationData.maxPage);
@@ -54,17 +42,17 @@ $.fn.paginateCore = function (paginationData) {
     return this;
 };
 
-$.fn.paginate = function (pdata) {
+$.fn.paginate = function(pdata) {
     var p;
     var main = $(this);
 
-    if(pdata.currentPage === undefined) pdata.currentPage = 1;
-    if(pdata.visiblePage === undefined) pdata.visiblePage = 5;
-    if(pdata.maxPage === undefined) throw new Error("maxPage is undefined!");
+    if (pdata.currentPage === undefined) pdata.currentPage = 1;
+    if (pdata.visiblePage === undefined) pdata.visiblePage = 5;
+    if (pdata.maxPage === undefined) throw new Error("maxPage is undefined!");
 
     $(this).paginateCore(pdata);
     $("#page-" + pdata.currentPage).addClass('active');
-    $("ul.paging li").click(function () {
+    $("ul.paging li").click(function() {
         var data = $(this).data("p");
         if (data === pdata.currentPage) return;
         if (data === "prev-page") {
@@ -88,7 +76,7 @@ $.fn.paginate = function (pdata) {
         main.paginate(pdata);
         $("#page-" + pdata.currentPage).addClass('active');
     });
-    $("#goto-page").unbind().keypress(function (e) {
+    $("#goto-page").unbind().keypress(function(e) {
         var pval = $(this).val();
         if (e.which === 13 && pval) {
             pdata.currentPage = pval <= 1 ? 1 : (pval >= pdata.maxPage ? pdata.maxPage : pval);
