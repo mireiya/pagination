@@ -6,7 +6,7 @@ Add these two lines in your html file.
 
 ``` html
 <link href="pagination.css" rel="stylesheet" type="text/css"/>
-<script src="paginate.js"></script>
+<script src="paginate.min.js"></script>
 ```
 
 --------------------------------
