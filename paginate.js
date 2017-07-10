@@ -3,7 +3,7 @@ $.fn.paginateCore = function(paginationData) {
     var visiblePage = parseInt(paginationData.visiblePage);
     var maxPage = parseInt(paginationData.maxPage);
 
-    var vhalf = visiblePage / 2;
+    var vhalf = Math.floor(visiblePage / 2);
 
     var first = 1;
     var index = 0;
