@@ -2,6 +2,12 @@
 
 A simple jQuery pagination plugin.
 
+## Demo
+
+http://mireiya.github.io/pagination
+
+--------------------------------
+
 ## Usage
 
 Add these two lines in your html file.
