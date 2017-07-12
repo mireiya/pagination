@@ -72,7 +72,7 @@ $.fn.paginate = function(pdata) {
         } else {
             p = parseInt(data);
         }
-        pdata.currentPage = p;
+        pdata.currentPage = parseInt(p);
         main.paginate(pdata);
         $("#page-" + pdata.currentPage).addClass('active');
     });
