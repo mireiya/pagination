@@ -1,5 +1,7 @@
 # Pagination
 
+A simple jQuery pagination plugin.
+
 ## Usage
 
 Add these two lines in your html file.
