@@ -1,21 +1,9 @@
-$(document).ready(function () {
-    $("#pages").paginate({
-        visiblePage: 10,
-        maxPage: 954,
-        onPageChange: function (page) {
-            $("#content").html(page);
-            console.log(page);
-        }
-    });
-});
-
 $.fn.paginateCore = function (paginationData) {
     var currentPage = parseInt(paginationData.currentPage);
     var visiblePage = parseInt(paginationData.visiblePage);
     var maxPage = parseInt(paginationData.maxPage);
 
     var vhalf = Math.floor(visiblePage / 2);
-
     var first = 1;
     var index = 0;
     var pagingdiv = '<div class="paging-wrapper"><ul class="paging noselect" data-p="' + currentPage + '">';
