@@ -4,7 +4,7 @@ A simple jQuery pagination plugin.
 
 ## Demo
 
-http://mireiya.github.io/pagination
+http://reihaya.github.io/pagination
 
 --------------------------------
 
